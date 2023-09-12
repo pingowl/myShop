@@ -54,5 +54,12 @@ public class PostController {
     }
 
 
-    //게시판글 삭제
+    // 게시판글 삭제
+    @PostMapping("{postId}/delete")
+    public ResponseEntity<Void> deletePost(@PathVariable Long postId) throws IOException {
+
+        postService.deletePost(postId);
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

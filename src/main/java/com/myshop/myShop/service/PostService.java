@@ -61,7 +61,11 @@ public class PostService {
 
 
     // 게시판글 삭제
+    public void deletePost(Long postId) throws IOException {
 
+        Post findPost = getPostOrThrow(postId);
+        postRepository.delete(findPost);
+    }
 
 
     // 예외 처리 - 존재하는 post인지
